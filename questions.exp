@@ -1,0 +1,17 @@
+#!/usr/bin/expect
+
+set timeout -1
+
+# spawn sh ./questions.sh 
+spawn go run main.go 
+
+expect "Your name:" 
+send "oi\r"
+
+expect "Are you human?" 
+send "y\r"
+
+expect "What is your favorite programming language?"
+send "go\r"
+
+expect eof
